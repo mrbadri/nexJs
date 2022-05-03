@@ -20,6 +20,25 @@ const Home = () => {
           </Link>
         </li>
       </ul>
+      {/* Article Routes  */}
+      <h2>Article</h2>
+      <ul>
+        <li>
+          <Link href="/article?title=1&id=1">
+            <a>Article1</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/article?title=2&id=2">
+            <a>Article2</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/article?title=3&id=3">
+            <a>Article3</a>
+          </Link>
+        </li>
+      </ul>
     </>
   );
 };
