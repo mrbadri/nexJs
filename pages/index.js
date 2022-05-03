@@ -15,7 +15,7 @@ const Home = () => {
           </Link>
         </li>
         <li>
-          <Link href="/article">
+          <Link href="/articles">
             <a>Article</a>
           </Link>
         </li>
@@ -24,17 +24,17 @@ const Home = () => {
       <h2>Article</h2>
       <ul>
         <li>
-          <Link href="/article?title=1&id=1">
-            <a>Article1</a>
+          <Link href="/articles?title=1&id=1">
+            <a>Article Main Page</a>
           </Link>
         </li>
         <li>
-          <Link href="/article?title=2&id=2">
-            <a>Article2</a>
+          <Link href="/articles/[title]" as="/articles/article-1">
+            <a>Article Handle Dynamic title</a>
           </Link>
         </li>
         <li>
-          <Link href="/article?title=3&id=3">
+          <Link href="/articles/[title]/[id]" as="/articles/article-1/3">
             <a>Article3</a>
           </Link>
         </li>
