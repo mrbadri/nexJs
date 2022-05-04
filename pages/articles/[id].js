@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 
 const SingleArticle = () => {
-  const route = useRouter();
+  const {
+    query: { id },
+  } = useRouter();
 
-  console.log(route);
-
-  return <>test</>;
+  return <>ID: {id}</>;
 };
 
 export default SingleArticle;

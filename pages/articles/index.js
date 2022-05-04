@@ -1,5 +1,5 @@
-const Article = () => {
-  return <>Article</>;
+const Articles = () => {
+  return <>Articles</>;
 };
 
-export default Article;
+export default Articles;
