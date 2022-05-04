@@ -19,7 +19,7 @@ const Home = ({ posts }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   let res = await fetch("https://jsonplaceholder.typicode.com/posts");
   let posts = await res.json();
 
