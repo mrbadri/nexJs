@@ -8,7 +8,7 @@ const Home = ({ posts }) => {
         {posts.map((post) => {
           return (
             <li key={post.id}>
-              <Link href={"articles/[id]"} as={`articles/${post.id}`}>
+              <Link href={"posts/[id]"} as={`posts/${post.id}`}>
                 <a>{post.title}</a>
               </Link>
             </li>
