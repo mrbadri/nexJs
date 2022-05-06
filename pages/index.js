@@ -1,20 +1,10 @@
-import Link from "next/link";
+import PostList from "../components/postList";
 
 const Home = ({ posts }) => {
   return (
     <>
       <h2>Blog Posts</h2>
-      <ul>
-        {posts.map((post) => {
-          return (
-            <li key={post.id}>
-              <Link href={"posts/[id]"} as={`posts/${post.id}`}>
-                <a>{post.title}</a>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <PostList list={posts} />
     </>
   );
 };
