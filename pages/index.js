@@ -3,7 +3,20 @@ import PostList from "../components/postList";
 const Home = ({ posts }) => {
   return (
     <>
-      <h2>Blog Posts</h2>
+      <style global jsx>
+        {`
+          h2 {
+            display: flex;
+            background: green;
+          }
+          ul {
+            color: red;
+          }
+        `}
+      </style>
+
+      <img src="favicon.ico" />
+      <h2 style={{ color: "red" }}>Blog Posts</h2>
       <PostList list={posts} />
     </>
   );
