@@ -1,9 +1,10 @@
 import PostList from "../components/postList";
+import style from "./index.module.css";
 
 const Home = ({ posts }) => {
   return (
     <>
-      <style global jsx>
+      {/* <style global jsx>
         {`
           h2 {
             display: flex;
@@ -13,10 +14,10 @@ const Home = ({ posts }) => {
             color: red;
           }
         `}
-      </style>
+      </style> */}
 
       <img src="favicon.ico" />
-      <h2 style={{ color: "red" }}>Blog Posts</h2>
+      <h2 className={style.h2}>Blog Posts</h2>
       <PostList list={posts} />
     </>
   );
