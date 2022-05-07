@@ -1,7 +1,6 @@
 import PostList from "../components/postList";
 
 const Home = ({ posts }) => {
-  
   return (
     <>
       <style global jsx>
