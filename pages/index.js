@@ -1,5 +1,5 @@
 import PostList from "../components/postList";
-import style from "./index.module.css";
+import style from "./../public/scss/index.module.scss";
 
 const Home = ({ posts }) => {
   return (
@@ -17,7 +17,9 @@ const Home = ({ posts }) => {
       </style> */}
 
       <img src="favicon.ico" />
-      <h2 className={style.h2}>Blog Posts</h2>
+      <h2 className={style.h2}>
+        Blog Posts
+      </h2>
       <PostList list={posts} />
     </>
   );
