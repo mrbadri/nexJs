@@ -1,9 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import Cors from "cors";
-
-const cors = Cors({
-  origin: "http://localhost:3000",
-});
+import nextConnect from "next-connect";
 
 let customers = [
   { id: 1, name: "customer 1" },
@@ -13,18 +10,14 @@ let customers = [
   { id: 5, name: "customer 5" },
 ];
 
-function runMiddleware(req, res, fn) {
-  return new Promise((resolve, reject) => {
-    fn(req, res, (result) => {
-      if (result instanceof Error) return reject(result);
-      
-      return resolve(result);
-    });
-  });
-}
+const handler = nextConnect();
 
-export default async (req, res) => {
-  await runMiddleware(req, res, cors);
+const cors = Cors({
+  origin: "http://localhost:3000",
+});
 
+handler.use(cors).get(async (req, res) => {
   res.status(200).json({ data: customers, status: "success" });
-};
+});
+
+export default handler;
