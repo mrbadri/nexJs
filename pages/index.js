@@ -16,16 +16,19 @@ const Home = ({ posts, customers }) => {
 };
 
 export async function getStaticProps() {
-  let posts = [];
-  let customers = [];
+  try {
+    // POSTS
+    const jsonResPosts = await fetch(
+      "https://jsonplaceholder.typicode.com/posts"
+    );
+    var posts = await jsonResPosts.json();
 
-  await fetch("https://jsonplaceholder.typicode.com/posts")
-    .then((res) => res.json())
-    .then((data) => (posts = data));
-
-  await fetch("http://localhost:3000/api/customer")
-    .then((res) => res.json())
-    .then((data) => (customers = data));
+    // CUSTOMERS
+    const jsonResCustomers = await fetch("http://localhost:3000/api/customers");
+    var { data: customers } = await jsonResCustomers.json();
+  } catch (err) {
+    console.log(err);
+  }
 
   return {
     props: {

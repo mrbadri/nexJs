@@ -9,5 +9,5 @@ let customers = [
 ];
 
 export default function handler(req, res) {
-  res.status(200).json(customers);
+  res.status(200).json({ data: customers, status: "success" });
 }
