@@ -1,6 +1,7 @@
 let customers = [];
 
 export default (req, res) => {
+
   if (req.method === "POST") {
     customers.push(JSON.parse(req.body));
 

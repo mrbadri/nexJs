@@ -2,22 +2,24 @@
 import Cors from "cors";
 import nextConnect from "next-connect";
 
-let customers = [
-  { id: 1, name: "customer 1" },
-  { id: 2, name: "customer 2" },
-  { id: 3, name: "customer 3" },
-  { id: 4, name: "customer 4" },
-  { id: 5, name: "customer 5" },
-];
-
 const handler = nextConnect();
+const Customer = require("../../../models/customer");
 
 const cors = Cors({
   origin: "http://localhost:3000",
 });
 
 handler.use(cors);
-handler.get(async (req, res) => {
+
+handler.post(async (req, res) => {
+  const customer = new Customer({
+    name: req.body.name,
+  });
+
+  const customerSaved = await customer.save();
+
+  res.send(customerSaved);
+
   res.status(200).json({ data: customers, status: "success" });
 });
 

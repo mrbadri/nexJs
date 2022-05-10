@@ -2,8 +2,7 @@ import { useState } from "react";
 
 const createPost = () => {
   const [form, setForm] = useState({
-    title: "",
-    body: "",
+    name: "",
   });
 
   const changeHandler = (e) => {
@@ -26,20 +25,16 @@ const createPost = () => {
 
   return (
     <>
-      <h2>Create Post</h2>
+      <h2>Create Customer</h2>
       <form onSubmit={submitHandler}>
         <div>
-          <label>title</label>
+          <label>name: </label>
           <input
             type="text"
-            name="title"
-            value={form.title}
+            name="name"
+            value={form.name}
             onChange={changeHandler}
           />
-        </div>
-        <div>
-          <label>body</label>
-          <textarea name="body" value={form.body} onChange={changeHandler} />
         </div>
         <button type="submit">SEND</button>
       </form>
