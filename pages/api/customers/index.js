@@ -16,7 +16,8 @@ const cors = Cors({
   origin: "http://localhost:3000",
 });
 
-handler.use(cors).get(async (req, res) => {
+handler.use(cors);
+handler.get(async (req, res) => {
   res.status(200).json({ data: customers, status: "success" });
 });
 
