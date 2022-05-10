@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState } from "react";
 
 const createPost = () => {
@@ -26,6 +27,9 @@ const createPost = () => {
 
   return (
     <>
+      <Head>
+        <title>Create Post</title>
+      </Head>
       <h2>Create Post</h2>
       <form onSubmit={submitHandler}>
         <div>

@@ -1,9 +1,13 @@
+import Head from "next/head";
 import CustomerList from "../components/customerList";
 import PostList from "../components/postList";
 
 const Home = ({ posts, customers }) => {
   return (
     <>
+      <Head>
+        <title>Course Next JS</title>
+      </Head>
       <h2>Customer List</h2>
       <CustomerList list={customers} />
 

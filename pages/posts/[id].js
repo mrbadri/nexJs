@@ -1,8 +1,13 @@
-const SingleArticle = ({ post }) => {
+import Head from "next/head";
+
+const SinglePost = ({ post }) => {
   const { userId, title, id, body } = post;
 
   return (
     <div>
+      <Head>
+        <title>Single POST</title>
+      </Head>
       <h2>{title}</h2>
       <h3>
         <span>Post ID: {id}</span> <span>User ID: {userId}</span>
@@ -41,4 +46,4 @@ export async function getStaticProps({ params: { id } }) {
   };
 }
 
-export default SingleArticle;
+export default SinglePost;
