@@ -1,8 +1,6 @@
 import PostList from "../components/postList";
 
 const Home = ({ posts }) => {
-  kdjskscns
-  sdinskldnbkls
   return (
     <>
       <style global jsx>
